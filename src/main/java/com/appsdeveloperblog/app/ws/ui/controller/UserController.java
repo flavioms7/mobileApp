@@ -1,6 +1,8 @@
 package com.appsdeveloperblog.app.ws.ui.controller;
 
+import com.appsdeveloperblog.app.ws.service.UserService;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,6 +18,9 @@ import com.appsdeveloperblog.app.ws.ui.model.response.UserRest;
 @RestController
 @RequestMapping("users")
 public class UserController {
+
+	@Autowired
+	UserService userService;
 	
 	@GetMapping
 	public String getUser() {
@@ -23,7 +28,7 @@ public class UserController {
 		return "Get user was called";
 
 	}
-	
+
 	@PostMapping
 	public UserRest createUser(@RequestBody UserDetailsRequestModel userDetails) {
 

@@ -1,8 +1,7 @@
 package com.appsdeveloperblog.app.ws.ui.model.request;
 
-import javax.persistence.Entity;
 
-@Entity
+
 public class UserDetailsRequestModel {
 	
 	private String firstName;
